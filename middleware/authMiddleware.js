@@ -1,7 +1,6 @@
-// middlewares/authMiddleware.js
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET } from '../config/config.js';  // Make sure the path to config.js is correct
-import hashPassword from '../utils/hashUtils.js';  // Correct import for default export
+import { JWT_SECRET } from '../config/config.js';
+import hashPassword from '../utils/hashUtils.js';
 
 const authenticateJWT = (req, res, next) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
@@ -20,4 +19,4 @@ const authenticateJWT = (req, res, next) => {
   });
 };
 
-export default authenticateJWT;  // ES module export
+export default authenticateJWT;
